@@ -70,30 +70,42 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
     let tieScore = 0;
+     
+    //playing 5 rounds using while loop
+    let rounds = 0;
+    while(rounds < 5) {  
+    oneRound(playerSelection,computerPlay());
+    console.log(oneRound(playerSelection,computerPlay()))
+        //adding score
+        if(oneRound(playerSelection,computerPlay()) === "You Win"){
+            playerScore++;
+            console.log(playerScore);
+            console.log(computerScore);
+        }else if(oneRound(playerSelection,computerPlay()) === "You Lose"){
+            computerScore++;
+            console.log(playerScore);
+            console.log(computerScore);
+        }else {
+            tieScore++;
+            console.log(playerScore);
+            console.log(computerScore);
+        }
         
-    oneRound(playerSelection,computerSelection);
-    console.log(oneRound(playerSelection,computerSelection))
-    
-    //adding score
-    if(oneRound(playerSelection,computerSelection) === "You Win"){
-        playerScore++;
-        console.log(playerScore);
-        console.log(computerScore);
-    }else if(oneRound(playerSelection,computerSelection) === "You Lose"){
-        computerScore++;
-        console.log(playerScore);
-        console.log(computerScore);
-    }else {
-        tieScore++;
-        console.log(playerScore);
-        console.log(computerScore);
+    rounds++
     }
     
-    
+    //determining Winner
+    if(playerScore > computerScore){
+        console.log("YOU WIN THE GAME");
+    }else if(playerScore < computerScore){
+        console.log("YOU LOSE THE GAME!");
+    }else if(playerScore = computerScore){
+        console.log("The Game is a Tie!");
+    }
 }
 
 let playerSelection = "rock";
 let computerSelection = computerPlay();
 //let playOneRound = oneRound(playerSelection,computerSelection);
 //console.log(oneRound(playerSelection,computerSelection));
-console.log(game());
+game();
