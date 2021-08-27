@@ -1,70 +1,60 @@
-// a
-const playerSelection = "SCISSOR";
-const computerSelected = computerPlay();
+// the players selection using let
+let playerSelection = "rock";
 
-function computerPlay(){
-    // generate a random #
-    let randomNumber = Math.floor(Math.random()* 3);
-    // if number 0 -> "rock", 1 -> "paper", 2 -> "scissor"
-    if (randomNumber === 0) {
-        return "Rock";
-    }else if (randomNumber === 1){
-        return "Paper";
+
+
+//computers selection using a random # to generate rock, paper, scissors
+function computerPlay() {
+    let randomNumber = Math.floor(Math.random() * 3);
+    let computerChoice = ""
+
+    // using a if/else to pick rock, paper,scissors, based of randomNumber
+
+    if (randomNumber === 0){
+        computerChoice = "Rock"
+    }else if (randomNumber === 1) {
+        computerChoice = "Paper"
     }else {
-        return "Scissor";
-    }
-}
-
-
-
-
-function playRound(playerSelection,computerSelection) {
-    
-    if (playerSelection.toLowerCase() === "rock"  && computerSelection.toLowerCase() === "scissor"){
-        return "You win! Rock beats Scissor";
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
-        return "You lose! Paper beats Rock";
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissor"){
-        return "You lose! Scissor beats Paper";
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
-        return "You win! Paper beats Rock";
-    } else if (playerSelection.toLowerCase() === "scissor" && computerSelection.toLowerCase() === "rock"){
-        return "You lose! Rock beats Scissor";
-    } else if (playerSelection.toLowerCase() === "scissor" && computerSelection.toLowerCase() === "paper"){
-        return "You win! Scissor beats Paper";
-    } else {
-        return "Its a Tie!";
+        computerChoice = "Scissor"
     };
     
-
-  
+    return computerChoice;
 }
 
-function game(){
-   
-    // score tracker for player and computer
-    let computerScore = 0;
-    let playerScore = 0;
-    let tie = 0;
+// function that plays one round of rock paper scissors
+function oneRound(x,y) {
+    // x = playerSelection
+    // y = computerSelection
+    //if else to see who wins the round
 
-    // play a round
-    let round = playRound(playerSelection,computerPlay());
-    //determine winner with if statment using includes.
-    
-    while (computerScore < 3 && playerScore < 3){
-        round;
-        if (round.includes("win")) {
-            playerScore++;
-        }else if (round.includes("lose")){
-            computerScore++;
-        }else {
-            tie++; 
-        }
-    }
-   
-    console.log(computerScore);
-    console.log(playerScore);
+    x = x.toLowerCase();
+    y = y.toLowerCase();
+    console.log(x);
+    console.log(y);
+    //rock
+    if(x ===  "rock" && y === "rock"){
+        return "Its a Tie";
+    }else if (x === "rock" && y === "paper"){
+        return "You Lose";
+    }else if (x === "rock" && y === "scissor"){
+        return "You Win";
+    };
 
+    //paper
+    if(x ===  "paper" && y === "paper"){
+        return "Its a Tie";
+    }else if (x === "paper" && y === "rock"){
+        return "You Win";
+    }else if (x === "paper" && y === "scissor"){
+        return "You Lose"
+    };
+
+    // scissor
+    if(x ===  "scissor" && y === "scissor"){
+        return "Its a Tie";
+    }else if (x === "scissor" && y === "paper"){
+        return "You Win";
+    }else if (x === "scissor" && y === "rock"){
+        return "You Lose"
+    };
 }
-
-//game();
