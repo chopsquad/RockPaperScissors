@@ -1,5 +1,5 @@
 // the players selection using let
-let playerSelection = "rock";
+//let playerSelection = "rock";
 
 
 
@@ -60,3 +60,25 @@ function oneRound(x,y) {
         return "You Lose"
     };
 }
+
+// creating a function a that plays 5 rounds of rock paper scissors, keeps score, and reports the winner at the end
+function game(){
+    //keeping score using let
+    let playerScore = 0;
+    let computerScore = 0;
+    let tieScore = 0;
+    
+    //keeping track of the number of rounds
+    let rounds = 0;
+
+    // playing 5 rounds of the game using a while loop
+    while (rounds < 5){
+        oneRound(playerSelection,computerSelection);
+        rounds++
+    }
+
+    console.log(rounds);
+}
+let playerSelection = "rock";
+let computerSelection = computerPlay();
+//console.log(oneRound(playerSelection,computerSelection));
