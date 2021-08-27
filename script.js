@@ -25,12 +25,14 @@ function computerPlay() {
 function oneRound(x,y) {
     // x = playerSelection
     // y = computerSelection
-    //if else to see who wins the round
 
+    //making inputs case insensitive using toLowerCase()
     x = x.toLowerCase();
     y = y.toLowerCase();
     console.log(x);
     console.log(y);
+
+    //determining the winner using if/else statements and returning win/lose/tie
     //rock
     if(x ===  "rock" && y === "rock"){
         return "Its a Tie";
