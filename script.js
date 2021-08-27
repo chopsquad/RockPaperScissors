@@ -29,8 +29,8 @@ function oneRound(x,y) {
     //making inputs case insensitive using toLowerCase()
     x = x.toLowerCase();
     y = y.toLowerCase();
-    console.log(x);
-    console.log(y);
+    //console.log(x);
+    //console.log(y);
 
     //determining the winner using if/else statements and returning win/lose/tie
     //rock
@@ -61,24 +61,39 @@ function oneRound(x,y) {
     };
 }
 
+
+
 // creating a function a that plays 5 rounds of rock paper scissors, keeps score, and reports the winner at the end
 function game(){
+    
     //keeping score using let
     let playerScore = 0;
     let computerScore = 0;
     let tieScore = 0;
+        
+    oneRound(playerSelection,computerSelection);
+    console.log(oneRound(playerSelection,computerSelection))
     
-    //keeping track of the number of rounds
-    let rounds = 0;
-
-    // playing 5 rounds of the game using a while loop
-    while (rounds < 5){
-        oneRound(playerSelection,computerSelection);
-        rounds++
+    //adding score
+    if(oneRound(playerSelection,computerSelection) === "You Win"){
+        playerScore++;
+        console.log(playerScore);
+        console.log(computerScore);
+    }else if(oneRound(playerSelection,computerSelection) === "You Lose"){
+        computerScore++;
+        console.log(playerScore);
+        console.log(computerScore);
+    }else {
+        tieScore++;
+        console.log(playerScore);
+        console.log(computerScore);
     }
-
-    console.log(rounds);
+    
+    
 }
+
 let playerSelection = "rock";
 let computerSelection = computerPlay();
+//let playOneRound = oneRound(playerSelection,computerSelection);
 //console.log(oneRound(playerSelection,computerSelection));
+console.log(game());
