@@ -1,7 +1,3 @@
-// the players selection using let
-//let playerSelection = "rock";
-
-
 
 //computers selection using a random # to generate rock, paper, scissors
 function computerPlay() {
@@ -75,18 +71,21 @@ function game(){
     let rounds = 0;
     while(rounds < 5) {  
     oneRound(playerSelection,computerPlay());
-    console.log(oneRound(playerSelection,computerPlay()))
+    //console.log(oneRound(playerSelection,computerPlay()))
         //adding score
         if(oneRound(playerSelection,computerPlay()) === "You Win"){
             playerScore++;
+            console.log(oneRound(playerSelection,computerPlay()))
             console.log(playerScore);
             console.log(computerScore);
         }else if(oneRound(playerSelection,computerPlay()) === "You Lose"){
             computerScore++;
+            console.log(oneRound(playerSelection,computerPlay()))
             console.log(playerScore);
             console.log(computerScore);
         }else {
             tieScore++;
+            console.log(oneRound(playerSelection,computerPlay()))
             console.log(playerScore);
             console.log(computerScore);
         }
@@ -104,8 +103,11 @@ function game(){
     }
 }
 
-let playerSelection = "rock";
-let computerSelection = computerPlay();
+const playerSelection = window.prompt("Please Choose: Rock,Paper or Scissor");
+
+
+const computerSelection = computerPlay();
+
 //let playOneRound = oneRound(playerSelection,computerSelection);
 //console.log(oneRound(playerSelection,computerSelection));
 game();
