@@ -66,7 +66,6 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
     let tieScore = 0;
-     
     //playing 5 rounds using while loop
     let rounds = 0;
     while(rounds < 5) {  
@@ -76,21 +75,22 @@ function game(){
         if(oneRound(playerSelection,computerPlay()) === "You Win"){
             playerScore++;
             console.log(oneRound(playerSelection,computerPlay()))
-            console.log(playerScore);
-            console.log(computerScore);
+            //console.log(playerScore);
+            //console.log(computerScore);
         }else if(oneRound(playerSelection,computerPlay()) === "You Lose"){
             computerScore++;
             console.log(oneRound(playerSelection,computerPlay()))
-            console.log(playerScore);
-            console.log(computerScore);
+            //console.log(playerScore);
+            //console.log(computerScore);
         }else {
             tieScore++;
             console.log(oneRound(playerSelection,computerPlay()))
-            console.log(playerScore);
-            console.log(computerScore);
+            //console.log(playerScore);
+            //console.log(computerScore);
         }
-        
-    rounds++
+    console.log(playerScore);
+    console.log(computerScore);    
+    rounds++;
     }
     
     //determining Winner
@@ -103,11 +103,11 @@ function game(){
     }
 }
 
-const playerSelection = window.prompt("Please Choose: Rock,Paper or Scissor");
+//const playerSelection = window.prompt("Please Choose: Rock,Paper or Scissor");
 
 
 const computerSelection = computerPlay();
 
 //let playOneRound = oneRound(playerSelection,computerSelection);
 //console.log(oneRound(playerSelection,computerSelection));
-game();
+//game();
